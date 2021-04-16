@@ -1,0 +1,14 @@
+{
+    "token": "NzQ3MzYyNTM5MTMzOTkzMDEw.X0Nxmg.ZLL0YNvM_j_7CqJ82szvM1zFWR8",
+    "status": {
+        "state": "idle",
+        "type": "PLAYING",
+        "name": "killer bot"
+    },
+    "chat": {
+        "url": "http://api.brainshop.ai/get",
+        "bid": "155606",
+        "key": "P2qFtWJpI6meDZMo",
+        "uid": "Cleve"
+    }
+}
