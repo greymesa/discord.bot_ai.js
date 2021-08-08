@@ -1,4 +1,7 @@
+
 const Discord = require('discord.js');
+const request = require ('request');
+const cheerio = require('cheerio');
 const {
     token,
     status
@@ -11,9 +14,6 @@ const client = new Discord.Client({
 const PREFIX = '!'
 
 client.util = require('./util');
-
-const request = require ('request');
-const cheerio = require('cheerio');
 //errores y logs
 client.on('warn', err => console.warn('[WARNING]', err));
 
@@ -24,7 +24,7 @@ client.on('ready',() =>{
 
 })
 
-//si por algun casual lo anterior funciona y el melon qsoy haconseguido hacer q funciona ,esta parte ejecuta los mensajes
+//si por algun casual lo anterior funciona y el melon qsoy haconseguido hacer funciona ,esta parte ejecuta los mensajes
 //sin prexfix
 client.on('message',msg=>{
     if(msg.content === "presio"){
@@ -33,14 +33,71 @@ client.on('message',msg=>{
 
 })
 client.on('message',msg=>{
-    if(msg.content === "let me in"){
-        msg.reply('https://images-ext-2.discordapp.net/external/7fNdnVEIzJmSvtDFC2lwyce3cFSD20FgwxQ2zQquT90/%3Fcid%3D73b8f7b11e3dde6c0645f54cc08979d3636464c9d2aa4594%26rid%3Dgiphy.mp4%26ct%3Dg/https/media2.giphy.com/media/yx400dIdkwWdsCgWYp/giphy.mp4')
+    if(msg.content === "sexo"){
+        msg.reply('SEXOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+    }
+
+})
+
+client.on('message',msg=>{
+    if(msg.content === "loteria"){
+        msg.reply('bua si toca , le dais al creador')
+    }
+
+})
+client.on('message',msg=>{
+    if(msg.content === "puta"){
+        msg.reply('mezcla pures')
+    }
+
+})
+client.on('message',msg=>{
+    if(msg.content === "roblox"){
+        msg.reply('vete al minecraft')
+    }
+
+})
+client.on('message',msg=>{
+    if(msg.content === "xd"){
+        msg.reply('xd´nt')
+    }
+
+})
+client.on('message',msg=>{
+    if(msg.content === "jotaro"){
+        msg.sendMessage('DIO!')
+    }
+
+})
+client.on('message',msg=>{
+    if(msg.content === "triste"){
+        msg.reply('go ahead and cry!')
+    }
+
+})
+
+client.on('message',msg=>{
+    if(msg.content === "sad"){
+        msg.sendMessage(':(')
+    }
+
+})
+client.on('message',msg=>{
+    if(msg.content === "trifusion"){
+        msg.reply('masca chapas')
     }
 
 })
 client.on('message',msg=>{
     if(msg.content === "let me in"){
-        msg.reply('')
+        msg.sendMessage('https://images-ext-2.discordapp.net/external/7fNdnVEIzJmSvtDFC2lwyce3cFSD20FgwxQ2zQquT90/%3Fcid%3D73b8f7b11e3dde6c0645f54cc08979d3636464c9d2aa4594%26rid%3Dgiphy.mp4%26ct%3Dg/https/media2.giphy.com/media/yx400dIdkwWdsCgWYp/giphy.mp4')
+    }
+
+})
+
+client.on('message',msg=>{
+    if(msg.content === "dumb"){
+        msg.reply('like u')
     }
 
 })
@@ -105,7 +162,7 @@ client.on('message',msg=>{
     }
 
 })
-
+//no funsiona
 //con prefix
 client.on('message',message=>{
     
@@ -131,6 +188,17 @@ client.on('message',message=>{
 //end crap
 
 //mas mieldas
+const chalk = require('chalk');
+const moment = require('moment');
+
+if (process.env.NODE_ENV === 'development') {
+  console.log(chalk.cyan(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] Booting using dev...`));
+  require('babel-register');
+  require('./src/');
+} else {
+  console.log(chalk.cyan(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] Booting...`));
+  require('./dist');
+}
 
 //fin de mas mieldas
 
@@ -166,5 +234,4 @@ process.on('unhandledRejection', (reason, promise) => {
     console.log('[FATAL] Possibly Unhandled Rejection at: Promise ', promise, ' reason: ', reason.message);
 });
 //esto se cambia en los .json
-client.login(token)
-  
+client.login(process.env['TOKEN'])
