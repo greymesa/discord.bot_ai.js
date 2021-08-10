@@ -1,19 +1,21 @@
 
-const Discord = require('discord.js');
+
+const { Client, Intents } = require('discord.js');
+
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+
 const request = require ('request');
 const cheerio = require('cheerio');
 const {
     token,
     status
 } = require('./misc/config.json');
-const client = new Discord.Client({
-    disableEveryone: true,
-    disabledEvents: ['CHANNEL_PINS_UPDATE', 'GUILD_BAN_ADD', 'GUILD_BAN_REMOVE', 'RELATIONSHIP_ADD', 'RELATIONSHIP_REMOVE']
-});
+
 
 const PREFIX = '!'
 
 client.util = require('./util');
+
 //errores y logs
 client.on('warn', err => console.warn('[WARNING]', err));
 
@@ -24,7 +26,6 @@ client.on('ready',() =>{
 
 })
 
-//si por algun casual lo anterior funciona y el melon qsoy haconseguido hacer funciona ,esta parte ejecuta los mensajes
 //sin prexfix
 client.on('message',msg=>{
     if(msg.content === "presio"){
@@ -188,23 +189,12 @@ client.on('message',message=>{
 //end crap
 
 //mas mieldas
-const chalk = require('chalk');
-const moment = require('moment');
-
-if (process.env.NODE_ENV === 'development') {
-  console.log(chalk.cyan(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] Booting using dev...`));
-  require('babel-register');
-  require('./src/');
-} else {
-  console.log(chalk.cyan(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] Booting...`));
-  require('./dist');
-}
 
 //fin de mas mieldas
 
 
 
-//hippite hoppyty ur code is now my propperty
+
 //esta parte funciona con pings para usar la AI de Brain shop
 client.on('disconnect', () => {
     console.warn('Disconnected!')
@@ -233,5 +223,5 @@ client.on('ready', () => {
 process.on('unhandledRejection', (reason, promise) => {
     console.log('[FATAL] Possibly Unhandled Rejection at: Promise ', promise, ' reason: ', reason.message);
 });
-//esto se cambia en los .json
+//token
 client.login(process.env['TOKEN'])
