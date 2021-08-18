@@ -6,7 +6,7 @@ const {
 const handleStatus = (client, status) => {
     client.user.setStatus(status.state);
     client.user.setActivity(status.name, {
-        type: status.type
+        //type: status.type
     });
 };
 
@@ -14,7 +14,7 @@ const handleTalk = async (msg) => {
     try {
         msg.content = msg.content.replace(/^<@!?[0-9]{1,20}> ?/i, '');
         if (msg.content.length < 2) return;
-        msg.channel.startTyping(true);
+        //msg.channel.startTyping(true);
         const options = {
             method: 'GET',
             url: chat.url,
@@ -27,12 +27,12 @@ const handleTalk = async (msg) => {
             json: true
         };
         let reply = await request(options);
-        msg.channel.stopTyping(true);
+        //msg.channel.stopTyping(true);
         if (reply) {
             await msg.channel.send(reply.cnt);
         }
     } catch (e) {
-        msg.channel.stopTyping(true);
+       // msg.channel.stopTyping(true);
         console.log(e);
     }
 };
