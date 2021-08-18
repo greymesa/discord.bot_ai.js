@@ -1,5 +1,5 @@
 {
-    "token": "NzQ3MzYyNTM5MTMzOTkzMDEw.X0Nxmg.ZLL0YNvM_j_7CqJ82szvM1zFWR8",
+    "token": "token",
     "status": {
         "state": "idle",
         "type": "PLAYING",
@@ -9,6 +9,6 @@
         "url": "http://api.brainshop.ai/get",
         "bid": "155606",
         "key": "P2qFtWJpI6meDZMo",
-        "uid": "Cleve"
+        "uid": "lol"
     }
 }
