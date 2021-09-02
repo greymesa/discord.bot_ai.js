@@ -11,7 +11,7 @@ const client = new Client({
 });
 const PREFIX = '!'
 client.util = require('./util');
-client.util = require('./habeuste');
+//client.util = require('./habeuste');
 client.on('warn', err => console.warn('[WARNING]', err));
 
 client.on('error', err => console.error('[ERROR]', err));
