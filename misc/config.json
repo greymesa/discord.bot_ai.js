@@ -1,14 +1,13 @@
 {
-    "token": "token",
+    "bot_token": "ODQ4OTMzNzU0NDczOTM4OTc2.YLT1Kw.Z5h0R9dvoL2Gs3JZ2zfdEjC7XYI",
     "status": {
-        "state": "idle",
+        "state": "ONLINE",
         "type": "PLAYING",
-        "name": "killer bot"
+        "name": "Yes"
     },
     "chat": {
         "url": "http://api.brainshop.ai/get",
-        "bid": "666",
-        "key": "key",
-        "uid": "lol"
+        "brainID": "155604",
+        "key": "WqSIgRoyJTvwjWXq"
     }
 }

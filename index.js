@@ -1,31 +1,40 @@
-
-
-const { Client, Intents } = require('discord.js');
-
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
-
-const request = require ('request');
-const cheerio = require('cheerio');
 const {
-    token,
+    Client,
+    Intents
+} = require('discord.js');
+const {
+    bot_token,
     status
 } = require('./misc/config.json');
-
-
+const client = new Client({
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGE_TYPING, Intents.FLAGS.GUILD_MESSAGES]
+});
 const PREFIX = '!'
-
 client.util = require('./util');
-
-//errores y logs
+client.util = require('./habeuste');
 client.on('warn', err => console.warn('[WARNING]', err));
 
 client.on('error', err => console.error('[ERROR]', err));
 
-client.on('ready',() =>{
-    console.log('bot ensendio!');
+client.on('disconnect', () => {
+    console.warn('Disconnected!')
+    process.exit(0);
+});
 
-})
+client.on('uncaughtException', (err) => {
+    console.log('Uncaught Exception: ' + err)
+    process.exit(1)
+});
 
+client.on('messageCreate', (msg) => {
+    if (msg.author.bot) return;
+    if (msg.guild) {
+        if (msg.content.startsWith(`<@${msg.client.user.id}>`) || msg.content.startsWith(`<@!${msg.client.user.id}>`)) {
+            client.util.handleTalk(msg);
+        }
+    }
+});
+//my crap
 //sin prexfix
 client.on('message',msg=>{
     if(msg.content === "presio"){
@@ -66,7 +75,7 @@ client.on('message',msg=>{
 })
 client.on('message',msg=>{
     if(msg.content === "jotaro"){
-        msg.sendMessage('DIO!')
+        msg.reply('DIO!')
     }
 
 })
@@ -79,7 +88,7 @@ client.on('message',msg=>{
 
 client.on('message',msg=>{
     if(msg.content === "sad"){
-        msg.sendMessage(':(')
+        msg.reply(':(')
     }
 
 })
@@ -182,46 +191,14 @@ client.on('message',message=>{
     }
 })
 
-
-//crap n´ testing (probablemente no funcione)
-
-
-//end crap
-
-//mas mieldas
-
-//fin de mas mieldas
-
-
-
-
-//esta parte funciona con pings para usar la AI de Brain shop
-client.on('disconnect', () => {
-    console.warn('Disconnected!')
-    process.exit(0);
-});
-
-client.on('uncaughtException', (err) => {
-    console.log('Uncaught Exception: ' + err)
-    process.exit(1)
-});
-
-client.on('message', (msg) => {
-    if (msg.author.bot) return;
-    if (msg.guild) {
-        if (msg.content.startsWith(`<@${msg.client.user.id}>`) || msg.content.startsWith(`<@!${msg.client.user.id}>`)) {
-            client.util.handleTalk(msg);
-        }
-    }
-});
-//logs
+//the end :D
 client.on('ready', () => {
-    client.util.handleStatus(client, status);
-    console.log('[Bot de la nasa] tafunsional p*to!');
+  //  client.util.handleStatus(client, status);
+    console.log('[CLEVE] Started and ready to chat!');
 });
 
 process.on('unhandledRejection', (reason, promise) => {
     console.log('[FATAL] Possibly Unhandled Rejection at: Promise ', promise, ' reason: ', reason.message);
 });
-//token
-client.login(process.env['TOKEN'])
+
+client.login(bot_token);
