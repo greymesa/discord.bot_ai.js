@@ -1,3 +1,15 @@
+//to read this you can go to important part using ctrl+f and using the comments, the end of this parts are just: fin-'part'
+//Important ones: habla Images 
+//todo
+//Images (google images)
+//
+//
+//
+//
+//Done
+//AI
+//responses
+//8ball
 const {
     Client,
     Intents
@@ -100,31 +112,40 @@ client.on('message',msg=>{
 })
 
 //no funsiona
+
 //con prefix
 client.on('message',message=>{
-    
+
     let args =message.content.substring(PREFIX.length).split(" ");
 
     switch(args[0]){
         case 'getGF':
-            mesage.channel.sendMessage('got to tinder you horny!');
+            message.channel.send('got to tinder you horny!');
         break;  
         
         case 'help':
-            message.channel.sendMessage('ping me and write something to use the AI');
+            message.channel.send('ping me and write something to use the AI');
         break;  
         case 'do':
       
     }
 })
+client.on('message', message => {
+    if (message.content === '!ping') {  
+      message.channel.send(`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
+    }
+  });
+  
+
 //end-habla
+//8ball
 const Limiter = require("./limit8ball.js");
 let limit = new Limiter(15000);
 const fs = require("fs");
 
 const clockEmoji = ["🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛", "🕜", "🕝", "🕞", "🕟", "🕠", "🕡", "🕢", "🕣", "🕤", "🕥", "🕦", "🕧"];
 
-const re = /^(\>\s?r+o+ll+|\>\s?s+h+a+k+e+)(?:\s(.+))?/gim; // Regex to find out if a user types ">roll"
+const re = /^(\!\s?r+o+ll+|\!\s?s+h+a+k+e+)(?:\s(.+))?/gim; // Regex to find out if a user types ">roll"
 let responses;
 fs.readFile('./responses8ball.txt', "utf8", function(err, data) { // Allows custom responses
     if(err) {
@@ -162,8 +183,11 @@ client.on('message', msg => {
         }
       }
 });
-//8ball
+
 //fin-8ball
+//imagenes is TODO
+
+//fin-imagenes
 client.on('ready', () => {
     client.util.handleStatus(client, status);
     console.log('[Stoopid] epezado!');
