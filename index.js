@@ -9,9 +9,9 @@ const {
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGE_TYPING, Intents.FLAGS.GUILD_MESSAGES]
 });
-const PREFIX = '!'
+const PREFIX = '!';
 client.util = require('./util');
-//client.util = require('./habeuste');
+
 client.on('warn', err => console.warn('[WARNING]', err));
 
 client.on('error', err => console.error('[ERROR]', err));
@@ -34,144 +34,71 @@ client.on('messageCreate', (msg) => {
         }
     }
 });
-//my crap
-//sin prexfix
+//habla
 client.on('message',msg=>{
-    if(msg.content === "presio"){
-        msg.reply('muycaro gasias')
+    switch(msg.content){
+        case "presio":
+            msg.reply('muycaro gasias') 
+        break;
+        case "puta":
+            msg.reply('mezcla pures') 
+        break;
+        case "roblox":
+            msg.reply('vete al minecraft') 
+        break;         
+        case "xd":
+            msg.reply('xd´nt') 
+        break;        
+        case "uwu":
+            msg.reply('shootgun') 
+        break;        
+        case "jotaro":
+            msg.reply('DIO') 
+        break;        
+        case "sad":
+            msg.reply(':(') 
+        break;        
+        case "trifusion":
+            msg.reply('masca chapas') 
+        break;       
+         case "let me in":
+        msg.sendMessage('https://images-ext-2.discordapp.net/external/7fNdnVEIzJmSvtDFC2lwyce3cFSD20FgwxQ2zQquT90/%3Fcid%3D73b8f7b11e3dde6c0645f54cc08979d3636464c9d2aa4594%26rid%3Dgiphy.mp4%26ct%3Dg/https/media2.giphy.com/media/yx400dIdkwWdsCgWYp/giphy.mp4') 
+        break; 
+        case "69":
+            msg.reply('Nice') 
+        break;        
+        case "thicc":
+            msg.reply('ur mom') 
+        
+        break;       
+        case "me too kid":
+            msg.reply('https://i.imgflip.com/433z6b.png') 
+        break;        
+        case "never gonna give you up":
+            msg.reply('never let you down') 
+        break;       
+        case "kill me":
+            msg.reply('https://i.pinimg.com/originals/f0/03/29/f00329c74ed15d7696be7ed87a1e2691.gif') 
+        break;
+        case "FEED MY COIN":
+            msg.reply('https://youtu.be/6RU5sVP03fY') 
+        break;
+        case "i like your funny words magic man":
+        msg.reply('https://i.kym-cdn.com/photos/images/newsfeed/001/909/636/a8c.png') 
+        break;
+        break;
+        case "shut up and take a money":
+        msg.reply('https://i.pinimg.com/originals/86/e6/2f/86e62f136d93bc6bffada430bed0afed.jpg') 
+        break;
+
+        break;
+        case "HL3":
+        msg.reply('https://images-ext-2.discordapp.net/external/PcEowWZQLuGd0v6ATKO805XLKzb9Iz-lsg_sUqZgTFE/%3Fauto%3Dwebp%26s%3D7ed0d4cb43c6a6dc80a6e116ffce7a6f24aca89a/https/preview.redd.it/ewfgydv9jwn01.png haha no') 
+        break; 
+
     }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "sexo"){
-        msg.reply('SEXOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
-    }
-
-})
-
-client.on('message',msg=>{
-    if(msg.content === "loteria"){
-        msg.reply('bua si toca , le dais al creador')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "puta"){
-        msg.reply('mezcla pures')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "roblox"){
-        msg.reply('vete al minecraft')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "xd"){
-        msg.reply('xd´nt')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "jotaro"){
-        msg.reply('DIO!')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "triste"){
-        msg.reply('go ahead and cry!')
-    }
-
-})
-
-client.on('message',msg=>{
-    if(msg.content === "sad"){
-        msg.reply(':(')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "trifusion"){
-        msg.reply('masca chapas')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "let me in"){
-        msg.sendMessage('https://images-ext-2.discordapp.net/external/7fNdnVEIzJmSvtDFC2lwyce3cFSD20FgwxQ2zQquT90/%3Fcid%3D73b8f7b11e3dde6c0645f54cc08979d3636464c9d2aa4594%26rid%3Dgiphy.mp4%26ct%3Dg/https/media2.giphy.com/media/yx400dIdkwWdsCgWYp/giphy.mp4')
-    }
-
 })
 
-client.on('message',msg=>{
-    if(msg.content === "dumb"){
-        msg.reply('like u')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "69"){
-        msg.reply('Nice')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "thicc"){
-        msg.reply('ur mom')
-    }
-
-})
-
-client.on('message',msg=>{
-    if(msg.content === "me too kid"){
-        msg.reply('https://i.imgflip.com/433z6b.png')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "never gonna give you up"){
-        msg.reply('never let you down')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "kill me"){
-        msg.reply('https://i.pinimg.com/originals/f0/03/29/f00329c74ed15d7696be7ed87a1e2691.gif')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "yeet"){
-        msg.reply('https://i.pinimg.com/originals/f0/03/29/f00329c74ed15d7696be7ed87a1e2691.gif')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "FEED MY COIN"){
-        msg.reply('https://youtu.be/6RU5sVP03fY')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "i like your funny words magic man"){
-        msg.reply('https://i.kym-cdn.com/photos/images/newsfeed/001/909/636/a8c.png')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "shut up and take a money"){
-        msg.reply('https://i.pinimg.com/originals/86/e6/2f/86e62f136d93bc6bffada430bed0afed.jpg')
-    }
-
-})
-client.on('message',msg=>{
-    if(msg.content === "HL3"){
-        msg.reply('https://images-ext-2.discordapp.net/external/PcEowWZQLuGd0v6ATKO805XLKzb9Iz-lsg_sUqZgTFE/%3Fauto%3Dwebp%26s%3D7ed0d4cb43c6a6dc80a6e116ffce7a6f24aca89a/https/preview.redd.it/ewfgydv9jwn01.png haha no')
-    }
-
-})
 //no funsiona
 //con prefix
 client.on('message',message=>{
@@ -190,11 +117,56 @@ client.on('message',message=>{
       
     }
 })
+//end-habla
+const Limiter = require("./limit8ball.js");
+let limit = new Limiter(15000);
+const fs = require("fs");
 
-//the end :D
+const clockEmoji = ["🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛", "🕜", "🕝", "🕞", "🕟", "🕠", "🕡", "🕢", "🕣", "🕤", "🕥", "🕦", "🕧"];
+
+const re = /^(\>\s?r+o+ll+|\>\s?s+h+a+k+e+)(?:\s(.+))?/gim; // Regex to find out if a user types ">roll"
+let responses;
+fs.readFile('./responses8ball.txt', "utf8", function(err, data) { // Allows custom responses
+    if(err) {
+        console.log("Can't read or find responses.txt, setting defaults");
+        responses = ["It is certain", "It is decidedly so", "Without a doubt", "Yes, definitely",
+                    "You may rely on it", "As I see it, yes", "Most Likely", "Outlook good", "Yes",
+                    "Signs point to yes", "Reply hazy try again", "Ask again later"];
+    } else {
+        responses = data.split("\n"); // Responses are each individual line
+    }
+});
+
 client.on('ready', () => {
-  //  client.util.handleStatus(client, status);
-    console.log('[CLEVE] Started and ready to chat!');
+      console.log(`Logged in as ${client.user.tag}!`);
+    console.log("Available responses: " + responses.length);
+    //client.user.setGame(">roll or >shake");
+});
+
+client.on('message', msg => {
+    let matches = re.exec(msg.content);
+
+      if (!msg.author.bot && matches) {
+          if(limit && limit.exists(msg.author.id)) { // Checks if a usage limit is in place
+              for(let i = 0; i < Math.floor(Math.random()*5); i++) {
+                msg.react(clockEmoji[Math.floor(Math.random()*clockEmoji.length)]);
+              }
+        } else {
+            var rand = Math.floor(Math.random()*responses.length);
+              if(matches[2]) {
+                  msg.reply("You asked: \"" + matches[2] + "\" - " + responses[rand]);
+              } else {
+                  msg.reply(responses[rand]);
+              }
+              limit.add(msg.author.id);
+        }
+      }
+});
+//8ball
+//fin-8ball
+client.on('ready', () => {
+    client.util.handleStatus(client, status);
+    console.log('[Stoopid] epezado!');
 });
 
 process.on('unhandledRejection', (reason, promise) => {
