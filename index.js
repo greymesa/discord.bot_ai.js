@@ -51,13 +51,16 @@ client.on('messageCreate', (msg) => {
 });
 //habla
 client.on('message',msg=>{
-    switch(msg.content){
+    switch(msg.content.toLowerCase()){
         case "presio":
             msg.reply('muycaro gasias') 
         break;
         case "puta":
             msg.reply('mezcla pures') 
         break;
+        case "hello there":
+            msg.send('https://c.tenor.com/QFSdaXEwtBAAAAAC/hello-there-general-kenobi.gif')
+            break;
         case "roblox":
             msg.reply('vete al minecraft') 
         break;         
@@ -95,7 +98,7 @@ client.on('message',msg=>{
         case "kill me":
             msg.reply('https://i.pinimg.com/originals/f0/03/29/f00329c74ed15d7696be7ed87a1e2691.gif') 
         break;
-        case "FEED MY COIN":
+        case "feed my coin":
             msg.reply('https://youtu.be/6RU5sVP03fY') 
         break;
         case "i like your funny words magic man":
@@ -107,7 +110,7 @@ client.on('message',msg=>{
         break;
 
         break;
-        case "HL3":
+        case "hl3":
         msg.reply('https://images-ext-2.discordapp.net/external/PcEowWZQLuGd0v6ATKO805XLKzb9Iz-lsg_sUqZgTFE/%3Fauto%3Dwebp%26s%3D7ed0d4cb43c6a6dc80a6e116ffce7a6f24aca89a/https/preview.redd.it/ewfgydv9jwn01.png haha no') 
         break; 
 
