@@ -4,7 +4,7 @@
   "description": "A Cool Multi Purpose Discord Bot with commands for Fun, Utility, Moderation, Images, Animals",
   "main": "shard.js",
   "scripts": {
-    "start": "node shard.js"
+    "start": "node index.js"
   },
   "keywords": [
     "Discord Bot"
