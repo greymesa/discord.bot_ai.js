@@ -62,7 +62,7 @@ client.on('message',msg=>{
             msg.reply('vete al minecraft') 
         break;         
         case "xd":
-            msg.reply('xd´nt') 
+            msg.reply('... ||i have 2 say it||||xd´nt||') 
         break;        
         case "uwu":
             msg.reply('shootgun') 
@@ -191,13 +191,6 @@ client.on('message', msg => {
       }
 });
 
-client.on('ready', () => {
-  //  client.util.handleStatus(client, status);
-    console.log('[Stoopid] epezado!');
-});
 
-process.on('unhandledRejection', (reason, promise) => {
-    console.log('[FATAL] Possibly Unhandled Rejection at: Promise ', promise, ' reason: ', reason.message);
-});
 
 client.login(process.env.TOKEN);
